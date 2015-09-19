@@ -9,6 +9,8 @@ gem 'pg'
 # Use SCSS for stylesheets
 gem 'devise'
 
+gem 'rails_admin'
+
 gem 'omniauth-facebook'
 
 gem 'sass-rails', '~> 5.0'

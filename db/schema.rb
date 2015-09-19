@@ -40,6 +40,11 @@ ActiveRecord::Schema.define(version: 20150919060855) do
     t.integer  "created_by"
   end
 
+  create_table "trips_users", id: false, force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "trip_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -63,10 +68,5 @@ ActiveRecord::Schema.define(version: 20150919060855) do
   add_index "users", ["provider"], name: "index_users_on_provider", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["uid"], name: "index_users_on_uid", using: :btree
-
-  create_table "users_trips", id: false, force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "trip_id"
-  end
 
 end

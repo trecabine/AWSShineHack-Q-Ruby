@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'users/list'
 
   get 'users/sign_in'
@@ -16,8 +17,9 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
   #
   devise_scope :user do
-    get 'sign_in', :to => 'devise/sessions#new', :as => :new_user_session
+    #get 'sign_in', :to => 'devise/sessions#new', :as => :new_user_session
     delete 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session_path
+  end
 
   # You can have the root of your site routed with "root"
   root 'user#sign_in'
