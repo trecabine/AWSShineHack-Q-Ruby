@@ -4,12 +4,16 @@ class TripsController < ApplicationController
   # GET /trips
   # GET /trips.json
   def index
-    @trips = Trip.all
+    @trips = current_user.trips
+    @trips.to_json 
+
   end
 
   # GET /trips/1
   # GET /trips/1.json
-  def sho
+  def show
+    @trip = current_user.trips.find(params[:id])
+    @trip.to_json
   end
 
   # GET /trips/new
@@ -25,6 +29,7 @@ class TripsController < ApplicationController
   # POST /trips.json
   def create
     @trip = Trip.new(trip_params)
+    @trip.users << current_user
 
     respond_to do |format|
       if @trip.save
@@ -64,7 +69,7 @@ class TripsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_trip
-      @trip = Trip.find(params[:id])
+      @trip = Trip.find_by_id(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

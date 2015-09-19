@@ -1,6 +1,17 @@
 Rails.application.routes.draw do
-  resources :trips
+  #resources :trips
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+
+  get 'trips/' => 'trips#index'
+
+  get 'trips/new', to: 'trips#new'
+
+  get 'trips/:id', to: 'trips#show', as: 'trip'
+
+  post 'trips/', to: 'trips#create', as: 'trip_params'
+
+
   get 'users/list'
 
   #get 'users/sign_in'

@@ -29,6 +29,8 @@ class User < ActiveRecord::Base
       user = User.create(  provider:auth.provider,
                            uid:auth.uid,
                            email: auth.uid << "@facebook.com",
+                           name: auth.info.name,
+                           image: auth.info.image,
                            password:Devise.friendly_token[0,20]
                            )
       #user.ensure_authentication_token!
