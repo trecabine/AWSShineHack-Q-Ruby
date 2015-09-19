@@ -10,8 +10,6 @@ Rails.application.routes.draw do
 
   get 'users/users'
 
-  get 'user/sign_in'
-
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -22,7 +20,7 @@ Rails.application.routes.draw do
   end
 
   # You can have the root of your site routed with "root"
-  root 'user#sign_in'
+  #root 'users#sign_in'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
