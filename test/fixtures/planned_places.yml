@@ -1,11 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  visit_time: 2015-09-19 06:08:55
+  visit_time: 2015-09-19 13:59:02
   place_id: 1
   trip_id: 1
+  votes: 1
 
 two:
-  visit_time: 2015-09-19 06:08:55
+  visit_time: 2015-09-19 13:59:02
   place_id: 1
   trip_id: 1
+  votes: 1

@@ -4,6 +4,7 @@ class CreatePlannedPlaces < ActiveRecord::Migration
       t.datetime :visit_time
       t.integer :place_id
       t.integer :trip_id
+      t.integer :votes
 
       t.timestamps null: false
     end

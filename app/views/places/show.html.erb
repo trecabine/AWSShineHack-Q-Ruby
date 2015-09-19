@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @place.name %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @place.type %>
+</p>
+
+<p>
+  <strong>Created by:</strong>
+  <%= @place.created_by %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @place.price %>
+</p>
+
+<%= link_to 'Edit', edit_place_path(@place) %> |
+<%= link_to 'Back', places_path %>

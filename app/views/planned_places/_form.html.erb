@@ -1,0 +1,33 @@
+<%= form_for(@planned_place) do |f| %>
+  <% if @planned_place.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@planned_place.errors.count, "error") %> prohibited this planned_place from being saved:</h2>
+
+      <ul>
+      <% @planned_place.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :visit_time %><br>
+    <%= f.datetime_select :visit_time %>
+  </div>
+  <div class="field">
+    <%= f.label :place_id %><br>
+    <%= f.number_field :place_id %>
+  </div>
+  <div class="field">
+    <%= f.label :trip_id %><br>
+    <%= f.number_field :trip_id %>
+  </div>
+  <div class="field">
+    <%= f.label :votes %><br>
+    <%= f.number_field :votes %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Visit time:</strong>
+  <%= @planned_place.visit_time %>
+</p>
+
+<p>
+  <strong>Place:</strong>
+  <%= @planned_place.place_id %>
+</p>
+
+<p>
+  <strong>Trip:</strong>
+  <%= @planned_place.trip_id %>
+</p>
+
+<p>
+  <strong>Votes:</strong>
+  <%= @planned_place.votes %>
+</p>
+
+<%= link_to 'Edit', edit_planned_place_path(@planned_place) %> |
+<%= link_to 'Back', planned_places_path %>

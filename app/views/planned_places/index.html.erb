@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Planned Places</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Visit time</th>
+      <th>Place</th>
+      <th>Trip</th>
+      <th>Votes</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @planned_places.each do |planned_place| %>
+      <tr>
+        <td><%= planned_place.visit_time %></td>
+        <td><%= planned_place.place_id %></td>
+        <td><%= planned_place.trip_id %></td>
+        <td><%= planned_place.votes %></td>
+        <td><%= link_to 'Show', planned_place %></td>
+        <td><%= link_to 'Edit', edit_planned_place_path(planned_place) %></td>
+        <td><%= link_to 'Destroy', planned_place, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Planned place', new_planned_place_path %>

@@ -3,9 +3,11 @@
 one:
   name: MyString
   type: 
-  created_by: 1
+  created_by: MyString
+  price: MyString
 
 two:
   name: MyString
   type: 
-  created_by: 1
+  created_by: MyString
+  price: MyString

@@ -1,16 +1,29 @@
 Rails.application.routes.draw do
-  #resources :trips
+  resources :places
+  resources :planned_places
+  resources :trips
+
+  get 'trips/:id/places/' => 'trips#places'
+
+  get 'trips/:id/places/:place_id' => 'trips#oneplace'
+
+  post 'trips/:id/places/' => 'trips#postplaces'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
-  get 'trips/' => 'trips#index'
+  post 'planned_places/:id/vote', to: 'planned_places#vote'
 
-  get 'trips/new', to: 'trips#new'
+  #get 'planned_places/:id/vote', to: 'planned_places#vote'
 
-  get 'trips/:id', to: 'trips#show', as: 'trip'
+  #get 'trips/' => 'trips#index'
 
-  post 'trips/', to: 'trips#create', as: 'trip_params'
+  #get 'trips/new', to: 'trips#new'
 
+  #get 'trips/:id', to: 'trips#show', as: 'trip'
+
+  #post 'trips/', to: 'trips#create', as: 'trip_params'
+
+  #get 'places/' => 'plannedplaces#index'
 
   get 'users/list'
 
