@@ -25,3 +25,6 @@ test:
 production:
   <<: *default
   database: q_prod
+  host: ENV['DB_HOST']
+  user: dbuser
+  password: ENV['DB_PASS']
