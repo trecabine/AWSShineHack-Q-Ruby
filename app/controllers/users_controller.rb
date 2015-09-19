@@ -2,8 +2,9 @@ class UsersController < ApplicationController
   def sign_in
   end
 
-  def new
-
+  def index
+    @users = User.all
+    render :json => @users.to_json
   end
 
   def create

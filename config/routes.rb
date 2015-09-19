@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
+  resources :trips
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'users/list'
 
-  get 'users/sign_in'
+  #get 'users/sign_in'
 
-  get 'users/new'
+  get 'users/' => 'users#index'
 
   get 'users/create'
 
