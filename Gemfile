@@ -7,6 +7,9 @@ gem 'rails', '4.2.4'
 #gem 'sqlite3'
 gem 'pg'
 # Use SCSS for stylesheets
+#
+gem 'puma'
+
 gem 'devise'
 
 gem 'rails_admin'

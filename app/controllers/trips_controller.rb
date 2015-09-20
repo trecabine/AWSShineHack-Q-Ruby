@@ -5,7 +5,9 @@ class TripsController < ApplicationController
   # GET /trips
   # GET /trips.json
   def index
-    @trips = current_user.trips
+    user = current_user ? current_user : User.find(params['user'].to_i)
+    @trips = user.trips
+    #@trips = current_user.trips
     @trips.to_json
   end
 
@@ -37,7 +39,9 @@ class TripsController < ApplicationController
   # GET /trips/1
   # GET /trips/1.json
   def show
-    @trip = current_user.trips.find(params[:id])
+    puts "User " << params['user']
+    user = current_user ? current_user : User.find(params['user'].to_i)
+    @trip = user.trips.find(params[:id])
     puts "Trip " << @trip.id
     @trip.as_json
   end
